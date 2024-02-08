@@ -61,7 +61,8 @@ iris_config=dict(
     task_type='cluster',
     num_classes=4,
     num_iters=1000,
-    output_dir='cluster_iris_outputs'
+    output_dir='cluster_iris_outputs',
+    num_noise=50
 )
 
 iris_config = dict_to_namespace(iris_config)
