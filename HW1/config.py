@@ -56,6 +56,17 @@ eye_config=dict(
 
 eye_config = dict_to_namespace(eye_config)
 
+
+iris_config=dict(
+    task_type='cluster',
+    num_classes=4,
+    num_iters=1000,
+    output_dir='cluster_iris_outputs'
+)
+
+iris_config = dict_to_namespace(iris_config)
+
+
 if __name__ == '__main__':
     print(cloud_config)
     print(cloud_config['experts'])

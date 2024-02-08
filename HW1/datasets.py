@@ -6,6 +6,7 @@ import os.path as osp
 import numpy as np
 import scipy
 from scipy.io.arff import loadarff
+from sklearn import datasets
 
 from ucimlrepo import fetch_ucirepo 
 
@@ -50,6 +51,18 @@ def load_eye(path=EYE_PATH):
         'train': np_data
     }
     return data_dict
+
+def load_iris():
+    # Load a sample dataset (for example, the iris dataset)
+    iris = datasets.load_iris()
+    X = iris.data
+    y = iris.target
+    y = y[:, None]
+    data_dict = {
+        'train': np.concatenate([X, y], axis=-1)
+    }
+    return data_dict
+
 
 if __name__ == "__main__":
     # data = load_spambase_from_uci()
