@@ -1,0 +1,119 @@
+{'task_type': 'classification', 'experts': {'expert': {'in_features': 57, 'hidden_size': 16}, 'epoch': 2, 'lr': 0.02}, 'num_experts': 6, 'output_dir': 'spambase_outputs', 'experts_advice': {'type': 'fixshare', 'alpha': 0.5, 'lr': 0.02}}
+epoch 0, expert with 1 num_layers, eval acc 0.6076
+epoch 1, expert with 1 num_layers, eval acc 0.6087
+epoch 0, expert with 2 num_layers, eval acc 0.612
+epoch 1, expert with 2 num_layers, eval acc 0.6065
+epoch 0, expert with 3 num_layers, eval acc 0.6054
+epoch 1, expert with 3 num_layers, eval acc 0.6087
+epoch 0, expert with 4 num_layers, eval acc 0.6087
+epoch 1, expert with 4 num_layers, eval acc 0.6087
+epoch 0, expert with 5 num_layers, eval acc 0.5978
+epoch 1, expert with 5 num_layers, eval acc 0.6098
+epoch 0, expert with 6 num_layers, eval acc 0.6054
+epoch 1, expert with 6 num_layers, eval acc 0.6065
+==========================================================
+[Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=1, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Identity()
+  (layers): ModuleList()
+), Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=16, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Linear(in_features=16, out_features=1, bias=True)
+  (layers): ModuleList()
+), Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=16, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Linear(in_features=16, out_features=1, bias=True)
+  (layers): ModuleList(
+    (0): Linear(in_features=16, out_features=16, bias=True)
+    (1): ReLU()
+  )
+), Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=16, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Linear(in_features=16, out_features=1, bias=True)
+  (layers): ModuleList(
+    (0): Linear(in_features=16, out_features=16, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=16, out_features=16, bias=True)
+    (3): ReLU()
+  )
+), Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=16, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Linear(in_features=16, out_features=1, bias=True)
+  (layers): ModuleList(
+    (0): Linear(in_features=16, out_features=16, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=16, out_features=16, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=16, out_features=16, bias=True)
+    (5): ReLU()
+  )
+), Expert(
+  (input_layer): Sequential(
+    (0): Linear(in_features=57, out_features=16, bias=True)
+    (1): ReLU()
+  )
+  (output_layer): Linear(in_features=16, out_features=1, bias=True)
+  (layers): ModuleList(
+    (0): Linear(in_features=16, out_features=16, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=16, out_features=16, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=16, out_features=16, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=16, out_features=16, bias=True)
+    (7): ReLU()
+  )
+)]
+distribution of experts advice after seeing 0 samples: [0.17981301 0.17958176 0.17952605 0.10201113 0.17952373 0.17954431]
+distribution of experts advice after seeing 100 samples: [0.1669456  0.16718136 0.16723779 0.16401705 0.16734202 0.16727618]
+distribution of experts advice after seeing 200 samples: [0.18009434 0.17999467 0.1799657  0.1000007  0.17996921 0.17997538]
+distribution of experts advice after seeing 300 samples: [0.16844494 0.16867577 0.16872158 0.15672728 0.16872342 0.16870701]
+distribution of experts advice after seeing 400 samples: [0.16634288 0.16661835 0.16667476 0.16703031 0.16667701 0.1666567 ]
+distribution of experts advice after seeing 500 samples: [0.17982067 0.18007089 0.18002861 0.1        0.18003203 0.1800478 ]
+distribution of experts advice after seeing 600 samples: [0.17125077 0.17137857 0.17139775 0.14318067 0.17139947 0.17139277]
+distribution of experts advice after seeing 700 samples: [0.18006461 0.18002696 0.17994894 0.10004836 0.17995269 0.17995843]
+distribution of experts advice after seeing 800 samples: [0.18008121 0.18002537 0.17993991 0.1        0.17998738 0.17996613]
+distribution of experts advice after seeing 900 samples: [0.17070254 0.1708393  0.17086385 0.14587337 0.17086482 0.17085612]
+distribution of experts advice after seeing 1000 samples: [0.18018453 0.17998545 0.17993504 0.10001051 0.179932   0.17995248]
+distribution of experts advice after seeing 1100 samples: [0.17777399 0.17791523 0.17771469 0.11120195 0.17778035 0.17761378]
+distribution of experts advice after seeing 1200 samples: [0.18006391 0.17995603 0.17992518 0.10019554 0.17992386 0.17993547]
+distribution of experts advice after seeing 1300 samples: [0.18010482 0.17994721 0.17990213 0.10022824 0.17990039 0.17991721]
+distribution of experts advice after seeing 1400 samples: [0.17182513 0.17192787 0.17194454 0.14041789 0.17194518 0.17193938]
+distribution of experts advice after seeing 1500 samples: [0.1801094  0.17999461 0.17996219 0.1        0.17996081 0.17997299]
+distribution of experts advice after seeing 1600 samples: [0.16652142 0.16679434 0.16685019 0.16614927 0.16685224 0.16683254]
+distribution of experts advice after seeing 1700 samples: [0.16846882 0.16867384 0.16871825 0.15672587 0.16871192 0.1687013 ]
+distribution of experts advice after seeing 1800 samples: [0.17173142 0.17192895 0.1719522  0.14048773 0.17195395 0.17194574]
+distribution of experts advice after seeing 1900 samples: [0.17969969 0.17942727 0.17935768 0.10277822 0.1793556  0.17938153]
+distribution of experts advice after seeing 2000 samples: [0.17972504 0.17943627 0.17936474 0.10272395 0.17936175 0.17938825]
+distribution of experts advice after seeing 2100 samples: [0.18011942 0.1799938  0.17995888 0.1        0.17995739 0.1799705 ]
+distribution of experts advice after seeing 2200 samples: [0.16623548 0.16651475 0.16657178 0.16755067 0.16657401 0.1665533 ]
+distribution of experts advice after seeing 2300 samples: [0.16656453 0.16683323 0.16688736 0.16595547 0.16688959 0.16686983]
+distribution of experts advice after seeing 2400 samples: [0.16843353 0.16882762 0.16878368 0.15670042 0.16852569 0.16872905]
+distribution of experts advice after seeing 2500 samples: [0.18009317 0.17999552 0.17996849 0.1000005  0.17996567 0.17997665]
+distribution of experts advice after seeing 2600 samples: [0.16891242 0.1690741  0.16905326 0.15481094 0.16908662 0.16906267]
+distribution of experts advice after seeing 2700 samples: [0.18001808 0.179994   0.18001165 0.10000071 0.17993587 0.18003968]
+distribution of experts advice after seeing 2800 samples: [0.18018636 0.17998826 0.17993686 0.1        0.17993463 0.17995389]
+distribution of experts advice after seeing 2900 samples: [0.1792632  0.17897939 0.17890839 0.10501146 0.1789058  0.17893176]
+distribution of experts advice after seeing 3000 samples: [0.18015705 0.17998477 0.17996086 0.10000782 0.17993623 0.17995328]
+distribution of experts advice after seeing 3100 samples: [0.18020033 0.17998699 0.17993231 0.1        0.17993    0.17995038]
+distribution of experts advice after seeing 3200 samples: [0.16653732 0.16680596 0.16697392 0.16597676 0.16686291 0.16684313]
+distribution of experts advice after seeing 3300 samples: [0.17704343 0.17690431 0.17686625 0.1154426  0.17686464 0.17687877]
+distribution of experts advice after seeing 3400 samples: [0.1706634  0.170922   0.17093721 0.14557414 0.17095534 0.17094792]
+distribution of experts advice after seeing 3500 samples: [0.16707035 0.16733076 0.16738372 0.16346233 0.16738605 0.16736679]
+distribution of experts advice after seeing 3600 samples: [0.17180547 0.17171984 0.17170116 0.14137438 0.17169451 0.17170465]
+after iterating same training data--experts advice acc on same eval data: 0.6087
