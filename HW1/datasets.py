@@ -13,6 +13,9 @@ from ucimlrepo import fetch_ucirepo
 CLOUD_PATH='data/cloud'
 SPAMBASE_PATH='data/spambase'
 EYE_PATH='data/EEG Eye State.arff'
+CLOUD_ORG_PATH='data/cloud.pd'
+CLOUD_PATH='data/cloud'
+
 def split_train_val(data, train_ratio=0.8, shuffle=True):
     num_samples = data.shape[0]
     num_train_samples = round(num_samples * train_ratio)
@@ -38,10 +41,16 @@ def load_spambase_from_uci():
     data = np.concatenate([X_np, y_np], axis=1)
     return data
 
-def load_spambase(path=SPAMBASE_PATH):
-    with open(osp.join(SPAMBASE_PATH, 'train_val_dict.pkl'), 'rb') as f:
+def load_preprocessed(path):
+    with open(osp.join(path, 'train_val_dict.pkl'), 'rb') as f:
         train_val_dict = pkl.load(f)
     return train_val_dict
+
+def load_cloud_from_uci():
+    dataset = pd.read_table(CLOUD_ORG_PATH, delim_whitespace=True)
+    print(dataset)
+    dataset = dataset.to_numpy() 
+    return dataset
 
 def load_eye(path=EYE_PATH):
     raw_data = loadarff(path)
@@ -65,21 +74,37 @@ def load_iris():
 
 
 if __name__ == "__main__":
-    # data = load_spambase_from_uci()
-    # print(data.shape)
-    # train_data, val_data = split_train_val(data)
-    # print(train_data.shape)
-    # print(val_data.shape)
+    data = load_spambase_from_uci()
+    print(data.shape)
+    train_data, val_data = split_train_val(data)
+    print(train_data.shape)
+    print(val_data.shape)
 
-    # os.makedirs(SPAMBASE_PATH, exist_ok=True)
-    # train_val_dict = {
-    #     'train': train_data,
-    #     'val': val_data,
-    # }
-    # with open(osp.join(SPAMBASE_PATH, 'train_val_dict.pkl'), 'wb') as f:
-    #     pkl.dump(train_val_dict, f)
+    os.makedirs(SPAMBASE_PATH, exist_ok=True)
+    train_val_dict = {
+        'train': train_data,
+        'val': val_data,
+    }
+    with open(osp.join(SPAMBASE_PATH, 'train_val_dict.pkl'), 'wb') as f:
+        pkl.dump(train_val_dict, f)
 
-    eye_dataset = load_eye()
-    spambase_dataset = load_spambase()
-    print(eye_dataset)
-    print(spambase_dataset)
+    # eye_dataset = load_eye()
+    # spambase_dataset = load_spambase()
+    # print(eye_dataset)
+    # print(spambase_dataset)
+
+
+    data = load_cloud_from_uci()
+    print(data)
+    print(data.shape)
+    train_data, val_data = split_train_val(data)
+    print(train_data.shape)
+    print(val_data.shape)
+
+    os.makedirs(CLOUD_PATH, exist_ok=True)
+    train_val_dict = {
+        'train': train_data,
+        'val': val_data,
+    }
+    with open(osp.join(CLOUD_PATH, 'train_val_dict.pkl'), 'wb') as f:
+        pkl.dump(train_val_dict, f)

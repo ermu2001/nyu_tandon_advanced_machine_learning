@@ -27,15 +27,38 @@ class MyNamespace(dict):
         return r
 
 cloud_config=dict(
+    task_type='regression', # classification or regression
+    experts=dict(
+        expert=dict(
+            in_features=9,
+            hidden_size=8,
+        ),
+        epoch=10,
+        lr=1e-2,
+    ),
+    num_experts=6,
+    data_path='data/cloud',
+    output_dir='cloud_outputs',
+    experts_advice=dict(
+        type='fixshare', # fixshare or static
+        alpha=0.1,
+        lr=2e-2,
+    ),
+)
+
+cloud_config = dict_to_namespace(cloud_config)
+
+spambase_config=dict(
     task_type='classification', # classification or regression
     experts=dict(
         expert=dict(
             in_features=57,
             hidden_size=16,
         ),
-        epoch=2,
-        lr=2e-2,
+        epoch=10,
+        lr=1e-3,
     ),
+    data_path='data/spambase',
     num_experts=6,
     output_dir='spambase_outputs',
     experts_advice=dict(
@@ -45,7 +68,7 @@ cloud_config=dict(
     ),
 )
 
-cloud_config = dict_to_namespace(cloud_config)
+spambase_config = dict_to_namespace(spambase_config)
 
 eye_config=dict(
     task_type='cluster',
