@@ -1,6 +1,7 @@
 
 
 from argparse import Namespace
+from typing import Any
 
 
 def dict_to_namespace(dictionary):
@@ -19,12 +20,17 @@ def dict_to_namespace(dictionary):
 
 class MyNamespace(dict):
     def __getattr__(self, key):
-        if isinstance(key, str):
-            r = self[key] if key in self else None
+        if isinstance(key, str) and key in self:
+            r = self[key]
         else:
             r = getattr( super(), key)
-
         return r
+    
+    def __setattr__(self, __name: str, __value: Any) -> None:
+        if isinstance(__name, str) and __name in self:
+            self[__name] = __value
+        else:
+            return super().__setattr__(__name, __value)
 
 cloud_config=dict(
     task_type='regression', # classification or regression
@@ -41,7 +47,7 @@ cloud_config=dict(
     output_dir='cloud_outputs',
     experts_advice=dict(
         type='fixshare', # fixshare or static
-        alpha=0.1,
+        alpha=0.2,
         lr=2e-2,
     ),
 )
@@ -62,8 +68,7 @@ spambase_config=dict(
     num_experts=6,
     output_dir='spambase_outputs',
     experts_advice=dict(
-        type='fixshare', # fixshare or static
-        alpha=0.1,
+        type='static', # fixshare or static
         lr=2e-2,
     ),
 )

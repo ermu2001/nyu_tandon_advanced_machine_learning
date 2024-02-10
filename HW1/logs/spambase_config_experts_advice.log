@@ -1,0 +1,99 @@
+epoch 0, expert with 1 num_layers, eval error 0.425
+epoch 1, expert with 1 num_layers, eval error 0.1696
+epoch 2, expert with 1 num_layers, eval error 0.1554
+epoch 3, expert with 1 num_layers, eval error 0.138
+epoch 4, expert with 1 num_layers, eval error 0.1152
+epoch 5, expert with 1 num_layers, eval error 0.1011
+epoch 6, expert with 1 num_layers, eval error 0.09674
+epoch 7, expert with 1 num_layers, eval error 0.09457
+epoch 8, expert with 1 num_layers, eval error 0.09457
+epoch 9, expert with 1 num_layers, eval error 0.09239
+epoch 0, expert with 2 num_layers, eval error 0.3141
+epoch 1, expert with 2 num_layers, eval error 0.2076
+epoch 2, expert with 2 num_layers, eval error 0.1533
+epoch 3, expert with 2 num_layers, eval error 0.1174
+epoch 4, expert with 2 num_layers, eval error 0.1174
+epoch 5, expert with 2 num_layers, eval error 0.1065
+epoch 6, expert with 2 num_layers, eval error 0.1
+epoch 7, expert with 2 num_layers, eval error 0.09457
+epoch 8, expert with 2 num_layers, eval error 0.08152
+epoch 9, expert with 2 num_layers, eval error 0.0913
+epoch 0, expert with 3 num_layers, eval error 0.3359
+epoch 1, expert with 3 num_layers, eval error 0.2913
+epoch 2, expert with 3 num_layers, eval error 0.1707
+epoch 3, expert with 3 num_layers, eval error 0.1326
+epoch 4, expert with 3 num_layers, eval error 0.1587
+epoch 5, expert with 3 num_layers, eval error 0.1163
+epoch 6, expert with 3 num_layers, eval error 0.1315
+epoch 7, expert with 3 num_layers, eval error 0.1283
+epoch 8, expert with 3 num_layers, eval error 0.112
+epoch 9, expert with 3 num_layers, eval error 0.1022
+epoch 0, expert with 4 num_layers, eval error 0.288
+epoch 1, expert with 4 num_layers, eval error 0.1391
+epoch 2, expert with 4 num_layers, eval error 0.1196
+epoch 3, expert with 4 num_layers, eval error 0.1815
+epoch 4, expert with 4 num_layers, eval error 0.1087
+epoch 5, expert with 4 num_layers, eval error 0.112
+epoch 6, expert with 4 num_layers, eval error 0.09565
+epoch 7, expert with 4 num_layers, eval error 0.09348
+epoch 8, expert with 4 num_layers, eval error 0.1087
+epoch 9, expert with 4 num_layers, eval error 0.1489
+epoch 0, expert with 5 num_layers, eval error 0.2674
+epoch 1, expert with 5 num_layers, eval error 0.1761
+epoch 2, expert with 5 num_layers, eval error 0.1283
+epoch 3, expert with 5 num_layers, eval error 0.1054
+epoch 4, expert with 5 num_layers, eval error 0.1054
+epoch 5, expert with 5 num_layers, eval error 0.1076
+epoch 6, expert with 5 num_layers, eval error 0.08696
+epoch 7, expert with 5 num_layers, eval error 0.1076
+epoch 8, expert with 5 num_layers, eval error 0.1054
+epoch 9, expert with 5 num_layers, eval error 0.1
+epoch 0, expert with 6 num_layers, eval error 0.2674
+epoch 1, expert with 6 num_layers, eval error 0.1815
+epoch 2, expert with 6 num_layers, eval error 0.1609
+epoch 3, expert with 6 num_layers, eval error 0.162
+epoch 4, expert with 6 num_layers, eval error 0.1326
+epoch 5, expert with 6 num_layers, eval error 0.1511
+epoch 6, expert with 6 num_layers, eval error 0.1641
+epoch 7, expert with 6 num_layers, eval error 0.1163
+epoch 8, expert with 6 num_layers, eval error 0.1217
+epoch 9, expert with 6 num_layers, eval error 0.1413
+==========================================================
+distribution of experts advice after seeing 0 samples: [0.16653466 0.1670198  0.16663868 0.16708299 0.16674724 0.16597662]
+distribution of experts advice after seeing 100 samples: [0.16986202 0.16697548 0.16426201 0.16893434 0.1656561  0.16431004]
+distribution of experts advice after seeing 200 samples: [0.16436225 0.16755215 0.16727434 0.16393916 0.16780374 0.16906835]
+distribution of experts advice after seeing 300 samples: [0.16739709 0.16795313 0.16729726 0.16594409 0.1664529  0.16495552]
+distribution of experts advice after seeing 400 samples: [0.16827399 0.16723332 0.16705859 0.16616403 0.16533475 0.16593532]
+distribution of experts advice after seeing 500 samples: [0.16593391 0.16795536 0.16699587 0.16524696 0.16750999 0.16635791]
+distribution of experts advice after seeing 600 samples: [0.16674057 0.16774161 0.16695054 0.16683531 0.1661463  0.16558566]
+distribution of experts advice after seeing 700 samples: [0.16818309 0.16743365 0.16603618 0.16663571 0.16723886 0.16447251]
+distribution of experts advice after seeing 800 samples: [0.167324   0.16755087 0.16706916 0.16565934 0.16663455 0.16576208]
+distribution of experts advice after seeing 900 samples: [0.16682625 0.1676129  0.16641194 0.1664263  0.16678894 0.16593368]
+distribution of experts advice after seeing 1000 samples: [0.16912212 0.16826422 0.16730399 0.16160268 0.16811728 0.16558972]
+distribution of experts advice after seeing 1100 samples: [0.16606832 0.16799024 0.16646397 0.1666379  0.16663297 0.1662066 ]
+distribution of experts advice after seeing 1200 samples: [0.16554548 0.167138   0.16679031 0.16590343 0.16733889 0.1672839 ]
+distribution of experts advice after seeing 1300 samples: [0.16764196 0.16634099 0.16628071 0.16403022 0.16818089 0.16752524]
+distribution of experts advice after seeing 1400 samples: [0.16693167 0.16714682 0.1665696  0.16622191 0.16669271 0.16643729]
+distribution of experts advice after seeing 1500 samples: [0.1678608  0.16748295 0.16582207 0.16483362 0.16738817 0.16661239]
+distribution of experts advice after seeing 1600 samples: [0.16728226 0.16789827 0.16557765 0.16651693 0.16674648 0.16597841]
+distribution of experts advice after seeing 1700 samples: [0.16724022 0.16788828 0.16503396 0.16474446 0.16754877 0.16754431]
+distribution of experts advice after seeing 1800 samples: [0.16738342 0.16831381 0.16771127 0.16451316 0.16688609 0.16519225]
+distribution of experts advice after seeing 1900 samples: [0.16643739 0.16756792 0.16587938 0.16725237 0.16719522 0.16566771]
+distribution of experts advice after seeing 2000 samples: [0.16916717 0.1681264  0.16834089 0.15975576 0.16888809 0.16572169]
+distribution of experts advice after seeing 2100 samples: [0.16769745 0.16777875 0.1667977  0.16323769 0.16788936 0.16659904]
+distribution of experts advice after seeing 2200 samples: [0.16605023 0.16767312 0.16608918 0.16621364 0.16732486 0.16664896]
+distribution of experts advice after seeing 2300 samples: [0.16710568 0.16768238 0.16678881 0.16337886 0.16800958 0.16703468]
+distribution of experts advice after seeing 2400 samples: [0.16691437 0.16798971 0.16651295 0.16692012 0.1665133  0.16514956]
+distribution of experts advice after seeing 2500 samples: [0.16741859 0.16668671 0.16636694 0.16531482 0.16771765 0.1664953 ]
+distribution of experts advice after seeing 2600 samples: [0.16594814 0.16695027 0.16583983 0.16430588 0.16794052 0.16901536]
+distribution of experts advice after seeing 2700 samples: [0.16738291 0.16708519 0.16572219 0.16653109 0.16629807 0.16698055]
+distribution of experts advice after seeing 2800 samples: [0.16692994 0.1673702  0.16683543 0.16491673 0.16694077 0.16700693]
+distribution of experts advice after seeing 2900 samples: [0.1676545  0.16842152 0.16688541 0.1668511  0.16650883 0.16367864]
+distribution of experts advice after seeing 3000 samples: [0.1698568  0.16364298 0.16585623 0.16780899 0.16740675 0.16542825]
+distribution of experts advice after seeing 3100 samples: [0.16706133 0.16752001 0.16616538 0.16657299 0.16647017 0.16621013]
+distribution of experts advice after seeing 3200 samples: [0.16727663 0.16718878 0.16641473 0.1648044  0.16710804 0.16720742]
+distribution of experts advice after seeing 3300 samples: [0.16650322 0.16656078 0.16621148 0.16857521 0.16542116 0.16672814]
+distribution of experts advice after seeing 3400 samples: [0.16751114 0.16710346 0.16628636 0.16461066 0.16700657 0.16748181]
+distribution of experts advice after seeing 3500 samples: [0.16731362 0.16759864 0.16643072 0.16628705 0.16690012 0.16546984]
+distribution of experts advice after seeing 3600 samples: [0.167254   0.16801759 0.16718597 0.16495758 0.16755466 0.16503021]
+after iterating same training data--experts advice error on same eval data: 0.0978

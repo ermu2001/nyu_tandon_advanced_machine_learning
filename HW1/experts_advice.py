@@ -73,7 +73,7 @@ class ExpertsAdvice():
             losses = (y - predictions) ** 2 # mse loss
         else:
             raise NotImplementedError()
-        updated_distribution = np.matmul(self.distribution * np.exp(- self.lr * losses), self.transition_matrix)
+        updated_distribution = np.matmul(self.distribution * np.exp(- 1/2 * self.lr * losses), self.transition_matrix)
         updated_distribution = updated_distribution / updated_distribution.sum()
         self.distribution = updated_distribution
         return losses
