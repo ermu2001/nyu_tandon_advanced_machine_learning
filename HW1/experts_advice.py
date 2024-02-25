@@ -60,7 +60,6 @@ class ExpertsAdvice():
             predictions = expert(torch.from_numpy(x)[None, ...].to(device, dtype)).cpu().numpy().item() 
         return predictions
 
-
     def train(self, x, y):
         predictions = np.array([self.expert_predict(x, i) for i in range(self.num_experts)])
         y = np.array(y)[..., None]

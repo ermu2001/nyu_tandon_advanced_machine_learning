@@ -77,7 +77,7 @@ def train_one_expert(args, num_layers, save_dir):
     eval_dataloader = torch.utils.data.DataLoader(eval_dataset, batch_size=16)
     expert = Expert(num_layers=num_layers, **args.experts.expert).to(device=device, dtype=dtype)
     expert.apply(init_weights)
-    optim = torch.optim.Adam(expert.parameters(), lr=args.experts.lr )
+    optim = torch.optim.Adam(expert.parameters(), lr=args.experts.lr)
     for epoch in range(args.experts.epoch):
         tbar = tqdm.tqdm(dataloader, disable=True)
         expert.train()
