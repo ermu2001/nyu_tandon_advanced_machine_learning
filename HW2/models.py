@@ -12,6 +12,8 @@ class MLP(nn.Module):
         self.act = nn.SiLU()
 
     def forward(self, x):
+        if x.ndim > 2:
+            x = torch.flatten(x, 1)
         x = self.linear1(x)
         x = self.act(x)
         for hidden_layer in self.hidden_layers:
@@ -27,8 +29,8 @@ class LeNet(nn.Module):
         self.conv2 = nn.Conv2d(6, 16, 5, padding=0)
         self.linear1 = nn.Linear(400, 120)
         self.linear2 = nn.Linear(120, 84)
-        self.linear3 = nn.Linear(84, 10)
-        self.act = nn.Sigmoid()
+        self.linear3 = nn.Linear(84, out_dim)
+        self.act = nn.SiLU()
         self.pooling = nn.AvgPool2d(2, 2)
 
     def forward(self, x):
@@ -81,16 +83,16 @@ class ResNetCifarBlock(nn.Module):
 
 class ResNetCifar(nn.Module):
 
-    def __init__(self, n):
+    def __init__(self, n, input_size=3, output_size=10):
         super().__init__()
 
-        self.conv = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1)
+        self.conv = nn.Conv2d(input_size, 16, kernel_size=3, stride=1, padding=1)
         self.bn = nn.BatchNorm2d(16)
         self.block1 = ResNetCifarBlock.make_resblock_group(16, 16, n)
         self.block2 = ResNetCifarBlock.make_resblock_group(16, 32, n)
         self.block3 = ResNetCifarBlock.make_resblock_group(32, 64, n)
         self.pool = nn.AdaptiveAvgPool2d(output_size=(1, 1))  # global average pooling
-        self.fc = nn.Linear(64, 10)
+        self.fc = nn.Linear(64, output_size)
 
     def forward(self, x):
         x = F.relu(self.bn(self.conv(x)), inplace=True)
@@ -99,5 +101,28 @@ class ResNetCifar(nn.Module):
         x = self.block3(x)
         x = self.pool(x)
         x = x.view(x.shape[0], -1)
+        x = self.fc(x)
+        return x
+
+class SiameseCNN(nn.Module):
+    def __init__(self):
+        super(SiameseCNN, self).__init__()
+        # Define your layers here
+        self.conv = nn.Sequential(
+            nn.Conv2d(2, 16, kernel_size=3, padding=1),  # 2 input channels, 16 output channels
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2, 2),  # 14x14
+            # Additional layers can be added here
+        )
+        self.fc = nn.Sequential(
+            nn.Linear(16 * 14 * 14, 512),
+            nn.ReLU(inplace=True),
+            nn.Linear(512, 1),
+            nn.SiLU()
+        )
+
+    def forward(self, x):
+        x = self.conv(x)
+        x = x.view(x.size(0), -1)
         x = self.fc(x)
         return x
