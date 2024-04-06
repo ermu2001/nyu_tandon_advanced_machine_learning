@@ -49,11 +49,19 @@ class Model():
         assert x.ndim==2
         n, dim = x.shape
         N, _ = self.train_data.shape
+        # # # limitless cpu memory
         # k = np.square(self.train_data[ None, :, :] - x[ :, None, :]) # N N dim
         # k = np.sqrt(np.sum(k, axis=-1))
-        k = np.zeros((n, N))
-        for i in range(n):
-            k[i] = np.sqrt(np.sum(np.square(x[i] - self.train_data), axis=-1))
+
+        chunk_size = 10
+        for i in range(0, n, chunk_size):
+            sl = slice(i * chunk_size, i * chunk_size + chunk_size)
+            k[sl] = np.sqrt(np.sum(np.square(x[sl][:, None, :] - self.train_data[None, :, :]), axis=-1))
+
+        # # less cpu memory
+        # k = np.zeros((n, N))
+        # for i in range(0, n):
+        #     k[i] = np.sqrt(np.sum(np.square(x[i] - self.train_data), axis=-1))
 
         k = np.exp( - k / self.rbf_co / 2)
         return k
